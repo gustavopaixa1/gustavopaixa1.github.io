@@ -8,6 +8,7 @@
     <title>Gustavo Paixão - FullStack & IA</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </head>
 
@@ -16,20 +17,23 @@
         <div class="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#inicio" class="font-bold text-blue-900">GP</a>
 
-            <button id="menu-btn" class="md:hidden text-2xl text-blue-900" aria-label="Abrir menu" aria-expanded="false"
-                aria-controls="menu">
-                ☰
-            </button>
-
-            <nav id="menu" aria-label="Navegação principal"
-                class="hidden md:block absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent border-b md:border-0 border-slate-200">
+            <nav id="menu" aria-label="Navegação principal" data-i18n-aria="aria.nav"
+                class="hidden md:block md:ml-auto absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent border-b md:border-0 border-slate-200">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 p-6 md:p-0 text-slate-700">
-                    <li><a href="#sobre" class="hover:text-blue-900">Sobre</a></li>
-                    <li><a href="#projetos" class="hover:text-blue-900">Projetos</a></li>
-                    <li><a href="#experiencia" class="hover:text-blue-900">Experiência</a></li>
-                    <li><a href="#contato" class="hover:text-blue-900">Contato</a></li>
+                    <li><a href="#sobre" class="hover:text-blue-900" data-i18n="nav.sobre">Sobre</a></li>
+                    <li><a href="#projetos" class="hover:text-blue-900" data-i18n="nav.projetos">Projetos</a></li>
+                    <li><a href="#experiencia" class="hover:text-blue-900" data-i18n="nav.experiencia">Experiência</a></li>
+                    <li><a href="#contato" class="hover:text-blue-900" data-i18n="nav.contato">Contato</a></li>
                 </ul>
             </nav>
+
+            <div class="flex items-center gap-3 md:ml-6">
+                <button id="lang-btn" class="text-sm font-semibold text-blue-900 border border-blue-900 rounded px-2 py-1">EN</button>
+                <button id="menu-btn" class="md:hidden text-2xl text-blue-900" aria-label="Abrir menu" data-i18n-aria="aria.menu" aria-expanded="false"
+                    aria-controls="menu">
+                    ☰
+                </button>
+            </div>
         </div>
 
     </header>
@@ -37,68 +41,68 @@
 
         <section id="inicio" class="min-h-screen flex flex-col justify-center max-w-3xl mx-auto px-6 gap-8">
             <h1 class="text-5xl font-bold text-blue-900">Gustavo Paixão</h1>
-            <p class="text-xl text-slate-600">Desenvolvedor FullStack &amp; IA</p>
-            <p class="text-slate-700 leading-relaxed">Bacharel em Ciência da Computação pela UFPB. Desenvolvo backends
+            <p class="text-xl text-slate-600" data-i18n="hero.cargo">Desenvolvedor FullStack &amp; IA</p>
+            <p class="text-slate-700 leading-relaxed" data-i18n="hero.bio">Bacharel em Ciência da Computação pela UFPB. Desenvolvo backends
                 com Kotlin e Spring Boot. Hoje foco em construir aplicações com IA.</p>
-            <a href="#projetos" class="self-start bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-500">Ver
+            <a href="#projetos" class="self-start bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-500" data-i18n="hero.btn">Ver
                 projetos</a>
 
         </section>
 
         <section id="sobre" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6">Sobre mim</h2>
-            <p class="text-slate-700 leading-relaxed">Paraense e paraibano. Bacharel em Ciência da Computação pela UFPB.
+            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="sobre.titulo">Sobre mim</h2>
+            <p class="text-slate-700 leading-relaxed" data-i18n="sobre.texto">Paraense e paraibano. Bacharel em Ciência da Computação pela UFPB.
                 Atuei como QA na Klok Tech, atualmente RPE. Atuo como desenvolvedor FullStack e especialista em
                 Inteligência Artificial.</p>
         </section>
 
         <section id="projetos" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6">Projetos</h2>
+            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="projetos.titulo">Projetos</h2>
             <div class="grid gap-6 md:grid-cols-2">
                 <article
                     class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-400">
-                    <h3 class="text-xl font-semibold mb-2">Em breve</h3>
-                    <p class="text-sm">Projeto de IA em construção.</p>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="projetos.embreve.titulo">Em breve</h3>
+                    <p class="text-sm" data-i18n="projetos.embreve.texto">Projeto de IA em construção.</p>
                 </article>
 
                 <article
                     class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-400">
-                    <h3 class="text-xl font-semibold mb-2">Em breve</h3>
-                    <p class="text-sm">Projeto de IA em construção.</p>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="projetos.embreve.titulo">Em breve</h3>
+                    <p class="text-sm" data-i18n="projetos.embreve.texto">Projeto de IA em construção.</p>
                 </article>
             </div>
         </section>
 
         <section id="experiencia" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6">Experiência</h2>
+            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="exp.titulo">Experiência</h2>
             <div class="grid gap-6 md:grid-cols-2">
                 <article class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold mb-2">Analista de Qualidade</h3>
-                    <p class="text-slate-600 text-sm mb-4">Criação de testes automatizados para aplicações web e mobile.
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="exp.qa.titulo">Analista de Qualidade</h3>
+                    <p class="text-slate-600 text-sm mb-4" data-i18n="exp.qa.texto">Criação de testes automatizados para aplicações web e mobile.
                     </p>
                     <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">PlayWright</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Testes manuais</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Técnicas de testes</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Playwright</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded" data-i18n="exp.qa.tag.manuais">Testes manuais</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded" data-i18n="exp.qa.tag.tecnicas">Técnicas de testes</li>
                     </ul>
                 </article>
 
                 <article class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold mb-2">Gestor de projetos</h3>
-                    <p class="text-slate-600 text-sm mb-4">Atuação com gestão de projetos e equipes de desenvolvimento
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="exp.gp.titulo">Gestor de projetos</h3>
+                    <p class="text-slate-600 text-sm mb-4" data-i18n="exp.gp.texto">Atuação com gestão de projetos e equipes de desenvolvimento
                         em um projeto de extensão da faculdade</p>
                     <ul class="flex flex-wrap gap-2 text-xs">
                         <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Kotlin</li>
                         <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Spring Boot</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Inteligência Artificial</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded" data-i18n="exp.gp.tag.ia">Inteligência Artificial</li>
                     </ul>
                 </article>
             </div>
         </section>
 
         <section id="contato" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6">Contato</h2>
-            <p class="text-slate-700 mb-6">Aberto a oportunidades em desenvolvimento e IA.</p>
+            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="contato.titulo">Contato</h2>
+            <p class="text-slate-700 mb-6" data-i18n="contato.texto">Aberto a oportunidades em desenvolvimento e IA.</p>
             <ul class="flex flex-wrap gap-4">
                 <li>
                     <a href="mailto:luizgustavopaixa1@gmail.com"
