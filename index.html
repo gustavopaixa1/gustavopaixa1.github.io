@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -12,29 +12,77 @@
 </head>
 
 <body>
-    <header>
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#experiencia">Experiência</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+    <header class="sticky top-0 z-10 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="font-bold text-blue-900">GP</a>
+            <nav aria-label="Navegação principal">
+                <ul class="flex gap-2 text-slate-700">
+                    <li><a href="#sobre" class="hover:text-blue-900">Sobre</a></li>
+                    <li><a href="#projetos" class="hover:text-blue-900">Projetos</a></li>
+                    <li><a href="#experiencia" class="hover:text-blue-900">Experiência</a></li>
+                    <li><a href="#contato" class="hover:text-blue-900">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
     <main>
 
         <section id="inicio" class="min-h-screen flex flex-col justify-center max-w-3xl mx-auto px-6 gap-8">
             <h1 class="text-5xl font-bold text-blue-500">Gustavo Paixão</h1>
-            <p class="text-xl text-slate-600">"Desenvolvedor FullStack &amp; IA"</p>
-            <p class="text-slate-700 leading-relaxed">Bacharel em Ciência da Computação pela UFPB. Desenvolvo backends com Kotlin e Spring Boot. Hoje foco em construir aplicações com IA.</p>
-            <a href="#projetos" class="self-start bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-100">Ver projetos</a>
+            <p class="text-xl text-slate-600">Desenvolvedor FullStack &amp; IA</p>
+            <p class="text-slate-700 leading-relaxed">Bacharel em Ciência da Computação pela UFPB. Desenvolvo backends
+                com Kotlin e Spring Boot. Hoje foco em construir aplicações com IA.</p>
+            <a href="#projetos" class="self-start bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-500">Ver
+                projetos</a>
 
         </section>
 
-        <section id="sobre"></section>
-        <section id="projetos"></section>
-        <section id="experiencia"></section>
+        <section id="sobre" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6">Sobre mim</h2>
+            <p class="text-slate-700 leading-relaxed">Paraense e paraibano. Bacharel em Ciência da Computação pela UFPB. Atuei como QA na Klok Tech, atualmente RPE. Atuo como desenvolvedor FullStack e especialista em Inteligência Artificial.</p>
+        </section>
+
+        <section id="projetos" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6">Projetos</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <article class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-400">
+                    <h3 class="text-xl font-semibold mb-2">Em breve</h3>
+                    <p class="text-sm">Projeto de IA em construção.</p>
+                </article>
+
+                <article class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-400">
+                    <h3 class="text-xl font-semibold mb-2">Em breve</h3>
+                    <p class="text-sm">Projeto de IA em construção.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="experiencia" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6">Experiência</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <article class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Analista de Qualidade</h3>
+                    <p class="text-slate-600 text-sm mb-4">Criação de testes automatizados para aplicações web e mobile.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">PlayWright</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Testes manuais</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Técnicas de testes</li>
+                    </ul>
+                </article>
+
+                <article class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Gestor de projetos</h3>
+                    <p class="text-slate-600 text-sm mb-4">Atuação com gestão de projetos e equipes de desenvolvimento em um projeto de extensão da faculdade</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Kotlin</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Spring Boot</li>
+                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Inteligência Artificial</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
         <section id="contato"></section>
     </main>
     <footer></footer>
