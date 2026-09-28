@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Currículo de Gustavo Paixão - FullStack & IA">
+    <title>Currículo - Gustavo Paixão</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <style>
+        /* Configuração da página impressa: tamanho A4 e margens */
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
+        /* Mantém as cores (títulos azuis) no PDF */
+        body {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* Evita que um item de experiência seja cortado entre duas páginas */
+        .cv-item {
+            break-inside: avoid;
+        }
+
+        /* Não deixa um título sozinho no fim da página */
+        h2 {
+            break-after: avoid;
+        }
+    </style>
+</head>
+
+<body data-titulo="cv.titulo" class="bg-slate-100 print:bg-white text-slate-800">
+
+    <!-- Barra de ações: aparece na tela, some no PDF -->
+    <div class="print:hidden max-w-[210mm] mx-auto px-4 py-4 flex items-center justify-between gap-3">
+        <a href="index.html" class="text-sm text-blue-900 hover:underline" data-i18n="cv.voltar">← Voltar ao portfólio</a>
+        <div class="flex items-center gap-3">
+            <button id="lang-btn" class="text-sm font-semibold text-blue-900 border border-blue-900 rounded px-2 py-1">EN</button>
+            <button id="pdf-btn" class="text-sm bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700" data-i18n="cv.pdf">Baixar PDF</button>
+        </div>
+    </div>
+
+    <!-- Folha A4 -->
+    <main class="max-w-[210mm] mx-auto bg-white shadow-lg print:shadow-none px-10 py-10 print:p-0 mb-10 print:mb-0 text-sm leading-relaxed">
+
+        <!-- Cabeçalho (igual nos dois idiomas) -->
+        <header class="border-b-2 border-blue-900 pb-4 mb-6 print:mb-4">
+            <h1 class="text-3xl font-bold text-blue-900">Gustavo Paixão</h1>
+            <p class="text-base text-slate-600" data-i18n="hero.cargo">Desenvolvedor FullStack &amp; IA</p>
+            <p class="mt-2 text-xs text-slate-600 flex flex-wrap gap-x-4 gap-y-1">
+                <span>João Pessoa, PB</span>
+                <a href="mailto:luizgustavopaixa1@gmail.com">luizgustavopaixa1@gmail.com</a>
+                <a href="https://github.com/gustavopaixa1">github.com/gustavopaixa1</a>
+                <a href="https://www.linkedin.com/in/gustavo-paixao/">linkedin.com/in/gustavo-paixao</a>
+                <a href="https://gustavopaixa1.github.io">gustavopaixa1.github.io</a>
+            </p>
+        </header>
+
+        <!-- ================= PORTUGUÊS ================= -->
+        <div data-lang="pt">
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Resumo</h2>
+                <p>Bacharel em Ciência da Computação pela UFPB, com experiência em desenvolvimento backend com Kotlin e
+                    Spring Boot e em qualidade de software. Trabalho de conclusão em robótica social com visão
+                    computacional (YOLOv11, DeepSORT, ROS 2). Hoje foco em construir aplicações com Inteligência
+                    Artificial.</p>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Experiência</h2>
+
+                <div class="cv-item mb-4 print:mb-3">
+                    <div class="flex justify-between gap-4">
+                        <h3 class="font-semibold">RPE · <mark class="bg-yellow-200">[Empresa]</mark></h3>
+                        <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[início]</mark> – atual</span>
+                    </div>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Desenvolvimento backend com Kotlin, Spring Boot e WebFlux.</li>
+                        <li>Construção de microsserviços e APIs REST integrados a bancos de dados.</li>
+                        <li>Trabalho em equipe com metodologias ágeis e versionamento com Git.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item mb-4 print:mb-3">
+                    <div class="flex justify-between gap-4">
+                        <h3 class="font-semibold">Analista de Qualidade · Klok Tech</h3>
+                        <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[início – fim]</mark></span>
+                    </div>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Criação de testes automatizados para aplicações web e mobile com Playwright.</li>
+                        <li>Execução de testes manuais e aplicação de técnicas de teste de software.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item">
+                    <div class="flex justify-between gap-4">
+                        <h3 class="font-semibold">Gestor de Projetos · Projeto de extensão (UFPB)</h3>
+                        <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[início – fim]</mark></span>
+                    </div>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Gestão de projetos e de equipes de desenvolvimento (Kotlin, Spring Boot, IA).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Projetos</h2>
+                <div class="cv-item">
+                    <h3 class="font-semibold">Navegação de robôs socialmente consciente (TCC)</h3>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Sistema em ROS 2 / Nav2 com controlador MPPI para navegar respeitando grupos de pessoas.</li>
+                        <li>Detecção de pessoas com YOLOv11 e rastreamento com DeepSORT.</li>
+                        <li>Detecção de grupos (F-formations) por votação de Hough e camadas de custo gaussianas.</li>
+                        <li>Validação em simulação no Gazebo Harmonic, com estudo de ablação.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Formação</h2>
+                <div class="cv-item flex justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold">Bacharelado em Ciência da Computação</h3>
+                        <p>Universidade Federal da Paraíba (UFPB) · PET Computação</p>
+                    </div>
+                    <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[ano]</mark></span>
+                </div>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Habilidades</h2>
+                <ul class="space-y-1 print:space-y-0">
+                    <li><strong>Backend:</strong> Kotlin, Spring Boot, WebFlux, APIs REST, microsserviços, bancos de dados</li>
+                    <li><strong>IA e Visão Computacional:</strong> Python, YOLO, DeepSORT, ROS 2</li>
+                    <li><strong>Frontend:</strong> HTML, JavaScript, Tailwind CSS</li>
+                    <li><strong>Qualidade:</strong> Playwright, testes manuais</li>
+                    <li><strong>Ferramentas e práticas:</strong> Git, metodologias ágeis</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Idiomas</h2>
+                <p>Português (nativo) · Inglês (<mark class="bg-yellow-200">[nível]</mark>)</p>
+            </section>
+        </div>
+
+        <!-- ================= ENGLISH ================= -->
+        <div data-lang="en" hidden>
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Summary</h2>
+                <p>Computer Science graduate from UFPB with experience in backend development using Kotlin and Spring
+                    Boot, and in software quality. Undergraduate thesis in social robotics with computer vision
+                    (YOLOv11, DeepSORT, ROS 2). Currently focused on building AI-powered applications.</p>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Experience</h2>
+
+                <div class="cv-item mb-4 print:mb-3">
+                    <div class="flex justify-between gap-4">
+                        <h3 class="font-semibold">RPE · <mark class="bg-yellow-200">[Company]</mark></h3>
+                        <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[start]</mark> – present</span>
+                    </div>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Backend development with Kotlin, Spring Boot and WebFlux.</li>
+                        <li>Built microservices and REST APIs integrated with databases.</li>
+                        <li>Agile teamwork and version control with Git.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item mb-4 print:mb-3">
+                    <div class="flex justify-between gap-4">
+                        <h3 class="font-semibold">Quality Assurance Analyst · Klok Tech</h3>
+                        <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[start – end]</mark></span>
+                    </div>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Built automated tests for web and mobile applications with Playwright.</li>
+                        <li>Performed manual testing and applied software testing techniques.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item">
+                    <div class="flex justify-between gap-4">
+                        <h3 class="font-semibold">Project Manager · University extension program (UFPB)</h3>
+                        <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[start – end]</mark></span>
+                    </div>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>Managed projects and development teams (Kotlin, Spring Boot, AI).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Projects</h2>
+                <div class="cv-item">
+                    <h3 class="font-semibold">Socially-aware robot navigation (undergraduate thesis)</h3>
+                    <ul class="list-disc pl-5 mt-1">
+                        <li>ROS 2 / Nav2 system with an MPPI controller to navigate while respecting groups of people.</li>
+                        <li>Person detection with YOLOv11 and tracking with DeepSORT.</li>
+                        <li>Group detection (F-formations) via Hough voting and Gaussian cost layers.</li>
+                        <li>Validated in Gazebo Harmonic simulation, including an ablation study.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Education</h2>
+                <div class="cv-item flex justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold">B.Sc. in Computer Science</h3>
+                        <p>Federal University of Paraíba (UFPB) · PET Computação</p>
+                    </div>
+                    <span class="text-xs text-slate-500 shrink-0"><mark class="bg-yellow-200">[year]</mark></span>
+                </div>
+            </section>
+
+            <section class="mb-6 print:mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Skills</h2>
+                <ul class="space-y-1 print:space-y-0">
+                    <li><strong>Backend:</strong> Kotlin, Spring Boot, WebFlux, REST APIs, microservices, databases</li>
+                    <li><strong>AI &amp; Computer Vision:</strong> Python, YOLO, DeepSORT, ROS 2</li>
+                    <li><strong>Frontend:</strong> HTML, JavaScript, Tailwind CSS</li>
+                    <li><strong>Quality:</strong> Playwright, manual testing</li>
+                    <li><strong>Tools &amp; practices:</strong> Git, Agile</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">Languages</h2>
+                <p>Portuguese (native) · English (<mark class="bg-yellow-200">[level]</mark>)</p>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

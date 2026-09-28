@@ -1,0 +1,39 @@
+/* Grade sutil no fundo do hero, que some nas bordas (mask) */
+.bg-grid {
+    background-image:
+        linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 75%);
+}
+
+/* "Chip" de tecnologia, reutilizado em vários lugares */
+.chip {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    color: rgb(186 230 253);
+    background: rgb(56 189 248 / 0.08);
+    border: 1px solid rgb(56 189 248 / 0.15);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Animação de entrada ao rolar (só quando o JS está ativo) */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .reveal.visivel {
+    opacity: 1;
+    transform: none;
+}
+
+/* Respeita quem configurou o sistema para reduzir animações */
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

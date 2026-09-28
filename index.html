@@ -6,121 +6,298 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Gustavo Paixão - FullStack & IA">
     <title>Gustavo Paixão - FullStack & IA</title>
+
+    <!-- Marca que o JS está ativo (as animações só escondem conteúdo se o JS rodar) -->
+    <script>document.documentElement.classList.add("js");</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+            --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        }
+    </style>
     <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </head>
 
-<body>
-    <header class="sticky top-0 z-10 bg-white/80 backdrop-blur border-b border-slate-200">
-        <div class="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#inicio" class="font-bold text-blue-900">GP</a>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-sky-400/30">
+
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-20 bg-slate-950/70 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="font-mono font-bold text-white">
+                <span class="text-sky-400">&lt;</span>GP<span class="text-sky-400"> /&gt;</span>
+            </a>
 
             <nav id="menu" aria-label="Navegação principal" data-i18n-aria="aria.nav"
-                class="hidden md:block md:ml-auto absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent border-b md:border-0 border-slate-200">
-                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 p-6 md:p-0 text-slate-700">
-                    <li><a href="#sobre" class="hover:text-blue-900" data-i18n="nav.sobre">Sobre</a></li>
-                    <li><a href="#projetos" class="hover:text-blue-900" data-i18n="nav.projetos">Projetos</a></li>
-                    <li><a href="#experiencia" class="hover:text-blue-900" data-i18n="nav.experiencia">Experiência</a></li>
-                    <li><a href="#contato" class="hover:text-blue-900" data-i18n="nav.contato">Contato</a></li>
+                class="hidden md:block md:ml-auto absolute md:static top-full left-0 w-full md:w-auto bg-slate-950 md:bg-transparent border-b md:border-0 border-white/10">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-0 text-sm text-slate-400">
+                    <li><a href="#sobre" class="hover:text-white transition" data-i18n="nav.sobre">Sobre</a></li>
+                    <li><a href="#stack" class="hover:text-white transition" data-i18n="nav.stack">Stack</a></li>
+                    <li><a href="#projetos" class="hover:text-white transition" data-i18n="nav.projetos">Projetos</a></li>
+                    <li><a href="#experiencia" class="hover:text-white transition" data-i18n="nav.experiencia">Experiência</a></li>
+                    <li><a href="#contato" class="hover:text-white transition" data-i18n="nav.contato">Contato</a></li>
                 </ul>
             </nav>
 
-            <div class="flex items-center gap-3 md:ml-6">
-                <button id="lang-btn" class="text-sm font-semibold text-blue-900 border border-blue-900 rounded px-2 py-1">EN</button>
-                <button id="menu-btn" class="md:hidden text-2xl text-blue-900" aria-label="Abrir menu" data-i18n-aria="aria.menu" aria-expanded="false"
-                    aria-controls="menu">
-                    ☰
-                </button>
+            <div class="flex items-center gap-3 md:ml-8">
+                <button id="lang-btn"
+                    class="font-mono text-xs font-medium text-slate-300 border border-white/15 rounded-md px-2 py-1 hover:border-sky-400 hover:text-white transition">EN</button>
+                <button id="menu-btn" class="md:hidden text-2xl text-white" aria-label="Abrir menu"
+                    data-i18n-aria="aria.menu" aria-expanded="false" aria-controls="menu">☰</button>
             </div>
         </div>
-
     </header>
+
     <main>
+        <!-- ================= HERO ================= -->
+        <section id="inicio" class="relative isolate overflow-hidden">
+            <!-- Fundo: grade + brilhos desfocados -->
+            <div class="bg-grid absolute inset-0 -z-10"></div>
+            <div class="absolute -z-10 -top-24 -left-24 size-96 rounded-full bg-sky-500/20 blur-3xl"></div>
+            <div class="absolute -z-10 top-40 right-0 size-96 rounded-full bg-violet-600/20 blur-3xl"></div>
 
-        <section id="inicio" class="min-h-screen flex flex-col justify-center max-w-3xl mx-auto px-6 gap-8">
-            <h1 class="text-5xl font-bold text-blue-900">Gustavo Paixão</h1>
-            <p class="text-xl text-slate-600" data-i18n="hero.cargo">Desenvolvedor FullStack &amp; IA</p>
-            <p class="text-slate-700 leading-relaxed" data-i18n="hero.bio">Bacharel em Ciência da Computação pela UFPB. Desenvolvo backends
-                com Kotlin e Spring Boot. Hoje foco em construir aplicações com IA.</p>
-            <a href="#projetos" class="self-start bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-500" data-i18n="hero.btn">Ver
-                projetos</a>
+            <div class="max-w-5xl mx-auto px-6 min-h-[calc(100svh-4rem)] py-20 grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col gap-6">
+                    <span class="self-start inline-flex items-center gap-2 text-xs font-medium text-emerald-300 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-3 py-1">
+                        <span class="relative flex size-2">
+                            <span class="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                            <span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
+                        </span>
+                        <span data-i18n="hero.status">Aberto a oportunidades</span>
+                    </span>
 
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white">
+                        Gustavo<br>
+                        <span class="bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Paixão</span>
+                    </h1>
+
+                    <p class="font-mono text-sm text-sky-300" data-i18n="hero.cargo">Desenvolvedor FullStack &amp; IA</p>
+
+                    <p class="text-lg text-slate-400 leading-relaxed" data-i18n="hero.bio">Bacharel em Ciência da Computação pela UFPB. Desenvolvo backends com Kotlin e Spring Boot. Hoje foco em construir aplicações com IA.</p>
+
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="#projetos"
+                            class="bg-gradient-to-r from-sky-500 to-violet-500 text-white font-medium px-6 py-3 rounded-lg shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition"
+                            data-i18n="hero.btn">Ver projetos</a>
+                        <a href="cv.html"
+                            class="border border-white/15 text-white font-medium px-6 py-3 rounded-lg hover:bg-white/5 hover:border-white/30 transition"
+                            data-i18n="hero.cv">Currículo</a>
+                    </div>
+                </div>
+
+                <!-- Janela de código decorativa -->
+                <div class="hidden md:block relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-500/30 to-violet-500/30 blur-lg"></div>
+                    <div class="relative rounded-2xl border border-white/10 bg-slate-900/90 shadow-2xl overflow-hidden" aria-hidden="true">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10">
+                            <span class="size-3 rounded-full bg-red-400/80"></span>
+                            <span class="size-3 rounded-full bg-yellow-400/80"></span>
+                            <span class="size-3 rounded-full bg-green-400/80"></span>
+                            <span class="ml-3 font-mono text-xs text-slate-500">gustavo.py</span>
+                        </div>
+<pre class="p-6 font-mono text-sm leading-7 overflow-x-auto"><code><span class="text-violet-400">class</span> <span class="text-sky-300">Gustavo</span>(<span class="text-sky-300">Developer</span>):
+    location = <span class="text-emerald-300">"João Pessoa, PB"</span>
+    education = <span class="text-emerald-300">"CS @ UFPB"</span>
+    stack = [<span class="text-emerald-300">"Kotlin"</span>, <span class="text-emerald-300">"Spring"</span>, <span class="text-emerald-300">"Python"</span>]
+    focus = <span class="text-emerald-300">"AI Engineering"</span>
+
+    <span class="text-violet-400">def</span> <span class="text-sky-300">next</span>(self):
+        <span class="text-violet-400">return</span> <span class="text-emerald-300">"building with LLMs"</span> <span class="text-slate-500"># 🚀</span></code></pre>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="sobre" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="sobre.titulo">Sobre mim</h2>
-            <p class="text-slate-700 leading-relaxed" data-i18n="sobre.texto">Paraense e paraibano. Bacharel em Ciência da Computação pela UFPB.
-                Atuei como QA na Klok Tech, atualmente RPE. Atuo como desenvolvedor FullStack e especialista em
-                Inteligência Artificial.</p>
+        <!-- ================= SOBRE ================= -->
+        <section id="sobre" class="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-16">
+            <div class="reveal">
+                <p class="font-mono text-sm text-sky-400 mb-2">01. <span data-i18n="sobre.eyebrow">sobre</span></p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-10" data-i18n="sobre.titulo">Sobre mim</h2>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-10">
+                <p class="reveal md:col-span-3 text-lg text-slate-400 leading-relaxed" data-i18n="sobre.texto">Paraense e paraibano. Bacharel em Ciência da Computação pela UFPB. Atuei como QA na Klok Tech, atualmente RPE. Atuo como desenvolvedor FullStack e especialista em Inteligência Artificial.</p>
+
+                <ul class="reveal md:col-span-2 grid grid-cols-2 gap-4">
+                    <li class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                        <p class="text-xs text-slate-500" data-i18n="sobre.fato.local">Localização</p>
+                        <p class="font-semibold text-white">João Pessoa, PB</p>
+                    </li>
+                    <li class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                        <p class="text-xs text-slate-500" data-i18n="sobre.fato.formacao">Formação</p>
+                        <p class="font-semibold text-white" data-i18n="sobre.fato.formacao.valor">Ciência da Computação</p>
+                    </li>
+                    <li class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                        <p class="text-xs text-slate-500" data-i18n="sobre.fato.foco">Foco atual</p>
+                        <p class="font-semibold text-white" data-i18n="sobre.fato.foco.valor">IA aplicada</p>
+                    </li>
+                    <li class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                        <p class="text-xs text-slate-500" data-i18n="sobre.fato.base">Base</p>
+                        <p class="font-semibold text-white">Backend</p>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section id="projetos" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="projetos.titulo">Projetos</h2>
-            <div class="grid gap-6 md:grid-cols-2">
-                <article
-                    class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-400">
-                    <h3 class="text-xl font-semibold mb-2" data-i18n="projetos.embreve.titulo">Em breve</h3>
-                    <p class="text-sm" data-i18n="projetos.embreve.texto">Projeto de IA em construção.</p>
+        <!-- ================= STACK ================= -->
+        <section id="stack" class="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-16">
+            <div class="reveal">
+                <p class="font-mono text-sm text-sky-400 mb-2">02. stack</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-10" data-i18n="stack.titulo">Tecnologias</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-sky-400/40 hover:bg-white/[0.05] transition">
+                    <div class="size-10 rounded-lg bg-sky-400/10 text-sky-300 grid place-items-center font-mono mb-4">{ }</div>
+                    <h3 class="font-semibold text-white mb-3">Backend</h3>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Kotlin</li><li class="chip">Spring Boot</li><li class="chip">WebFlux</li>
+                        <li class="chip">REST</li><li class="chip" data-i18n="stack.micro">Microsserviços</li><li class="chip">SQL</li>
+                    </ul>
                 </article>
-
-                <article
-                    class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-400">
-                    <h3 class="text-xl font-semibold mb-2" data-i18n="projetos.embreve.titulo">Em breve</h3>
-                    <p class="text-sm" data-i18n="projetos.embreve.texto">Projeto de IA em construção.</p>
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-violet-400/40 hover:bg-white/[0.05] transition">
+                    <div class="size-10 rounded-lg bg-violet-400/10 text-violet-300 grid place-items-center font-mono mb-4">AI</div>
+                    <h3 class="font-semibold text-white mb-3" data-i18n="stack.ia">IA &amp; Visão Computacional</h3>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Python</li><li class="chip">YOLO</li><li class="chip">DeepSORT</li>
+                        <li class="chip">ROS 2</li>
+                    </ul>
+                </article>
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-emerald-400/40 hover:bg-white/[0.05] transition">
+                    <div class="size-10 rounded-lg bg-emerald-400/10 text-emerald-300 grid place-items-center font-mono mb-4">&lt;/&gt;</div>
+                    <h3 class="font-semibold text-white mb-3">Frontend</h3>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">HTML</li><li class="chip">JavaScript</li><li class="chip">Tailwind CSS</li>
+                    </ul>
+                </article>
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-amber-400/40 hover:bg-white/[0.05] transition">
+                    <div class="size-10 rounded-lg bg-amber-400/10 text-amber-300 grid place-items-center font-mono mb-4">✓</div>
+                    <h3 class="font-semibold text-white mb-3" data-i18n="stack.qa">Qualidade</h3>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Playwright</li><li class="chip" data-i18n="exp.qa.tag.manuais">Testes manuais</li>
+                    </ul>
+                </article>
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-pink-400/40 hover:bg-white/[0.05] transition sm:col-span-2 lg:col-span-2">
+                    <div class="size-10 rounded-lg bg-pink-400/10 text-pink-300 grid place-items-center font-mono mb-4">$_</div>
+                    <h3 class="font-semibold text-white mb-3" data-i18n="stack.ferramentas">Ferramentas &amp; práticas</h3>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Git</li><li class="chip">GitHub</li><li class="chip">Linux</li>
+                        <li class="chip" data-i18n="stack.ageis">Metodologias ágeis</li>
+                    </ul>
                 </article>
             </div>
         </section>
 
-        <section id="experiencia" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="exp.titulo">Experiência</h2>
-            <div class="grid gap-6 md:grid-cols-2">
-                <article class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold mb-2" data-i18n="exp.qa.titulo">Analista de Qualidade</h3>
-                    <p class="text-slate-600 text-sm mb-4" data-i18n="exp.qa.texto">Criação de testes automatizados para aplicações web e mobile.
-                    </p>
-                    <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Playwright</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded" data-i18n="exp.qa.tag.manuais">Testes manuais</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded" data-i18n="exp.qa.tag.tecnicas">Técnicas de testes</li>
-                    </ul>
-                </article>
+        <!-- ================= PROJETOS ================= -->
+        <section id="projetos" class="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-16">
+            <div class="reveal">
+                <p class="font-mono text-sm text-sky-400 mb-2">03. <span data-i18n="projetos.eyebrow">projetos</span></p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-10" data-i18n="projetos.titulo">Projetos</h2>
+            </div>
 
-                <article class="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold mb-2" data-i18n="exp.gp.titulo">Gestor de projetos</h3>
-                    <p class="text-slate-600 text-sm mb-4" data-i18n="exp.gp.texto">Atuação com gestão de projetos e equipes de desenvolvimento
-                        em um projeto de extensão da faculdade</p>
-                    <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Kotlin</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded">Spring Boot</li>
-                        <li class="bg-blue-50 text-blue-900 px-2 py-1 rounded" data-i18n="exp.gp.tag.ia">Inteligência Artificial</li>
-                    </ul>
+            <div class="grid gap-6 md:grid-cols-2">
+                <article class="reveal rounded-2xl border-2 border-dashed border-white/10 p-8 min-h-56 flex flex-col justify-center items-center text-center">
+                    <span class="font-mono text-2xl text-slate-600 mb-3">&lt;/&gt;</span>
+                    <h3 class="text-lg font-semibold text-slate-300 mb-1" data-i18n="projetos.embreve.titulo">Em breve</h3>
+                    <p class="text-sm text-slate-500" data-i18n="projetos.embreve.texto">Projeto de IA em construção.</p>
+                </article>
+                <article class="reveal rounded-2xl border-2 border-dashed border-white/10 p-8 min-h-56 flex flex-col justify-center items-center text-center">
+                    <span class="font-mono text-2xl text-slate-600 mb-3">&lt;/&gt;</span>
+                    <h3 class="text-lg font-semibold text-slate-300 mb-1" data-i18n="projetos.embreve.titulo">Em breve</h3>
+                    <p class="text-sm text-slate-500" data-i18n="projetos.embreve.texto">Projeto de IA em construção.</p>
                 </article>
             </div>
         </section>
 
-        <section id="contato" class="max-w-3xl mx-auto px-6 py-20 scroll-mt-20">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-i18n="contato.titulo">Contato</h2>
-            <p class="text-slate-700 mb-6" data-i18n="contato.texto">Aberto a oportunidades em desenvolvimento e IA.</p>
-            <ul class="flex flex-wrap gap-4">
-                <li>
-                    <a href="mailto:luizgustavopaixa1@gmail.com"
-                        class="inline-block border border-blue-900 text-blue-900 px-5 py-2 rounded-lg hover:bg-blue-900 hover:text-white transition">E-mail</a>
+        <!-- ================= EXPERIÊNCIA + FORMAÇÃO ================= -->
+        <section id="experiencia" class="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-16">
+            <div class="reveal">
+                <p class="font-mono text-sm text-sky-400 mb-2">04. <span data-i18n="exp.eyebrow">trajetória</span></p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-10" data-i18n="exp.titulo">Experiência</h2>
+            </div>
+
+            <!-- Linha do tempo -->
+            <ol class="relative border-l border-white/10 ml-2 space-y-10">
+                <li class="reveal pl-8 relative">
+                    <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-sky-400 ring-4 ring-sky-400/20"></span>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.qa.titulo">Analista de Qualidade</h3>
+                    <p class="text-sm text-sky-300 mb-2">Klok Tech</p>
+                    <p class="text-slate-400 mb-3" data-i18n="exp.qa.texto">Criação de testes automatizados para aplicações web e mobile.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Playwright</li>
+                        <li class="chip" data-i18n="exp.qa.tag.manuais">Testes manuais</li>
+                        <li class="chip" data-i18n="exp.qa.tag.tecnicas">Técnicas de testes</li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="https://github.com/gustavopaixa1" target="_blank" rel="noopener noreferrer"
-                        class="inline-block border border-blue-900 text-blue-900 px-5 py-2 rounded-lg hover:bg-blue-900 hover:text-white transition">GitHub</a>
+
+                <li class="reveal pl-8 relative">
+                    <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-violet-400 ring-4 ring-violet-400/20"></span>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.gp.titulo">Gestor de projetos</h3>
+                    <p class="text-sm text-violet-300 mb-2" data-i18n="exp.gp.local">Projeto de extensão · UFPB</p>
+                    <p class="text-slate-400 mb-3" data-i18n="exp.gp.texto">Atuação com gestão de projetos e equipes de desenvolvimento em um projeto de extensão da faculdade.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Kotlin</li>
+                        <li class="chip">Spring Boot</li>
+                        <li class="chip" data-i18n="exp.gp.tag.ia">Inteligência Artificial</li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/gustavo-paixao/" target="_blank" rel="noopener noreferrer"
-                        class="inline-block border border-blue-900 text-blue-900 px-5 py-2 rounded-lg hover:bg-blue-900 hover:text-white transition">LinkedIn</a>
+
+                <li class="reveal pl-8 relative">
+                    <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20"></span>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="form.titulo">Bacharelado em Ciência da Computação</h3>
+                    <p class="text-sm text-emerald-300 mb-2">UFPB · PET Computação</p>
+                    <p class="text-slate-400 mb-3" data-i18n="form.tcc">TCC em navegação de robôs socialmente consciente: detecção de pessoas com YOLOv11, rastreamento com DeepSORT e navegação com ROS 2 / Nav2, validado em simulação no Gazebo.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">ROS 2</li>
+                        <li class="chip">YOLOv11</li>
+                        <li class="chip">DeepSORT</li>
+                        <li class="chip">Python</li>
+                    </ul>
                 </li>
-            </ul>
+            </ol>
+        </section>
+
+        <!-- ================= CONTATO ================= -->
+        <section id="contato" class="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-16">
+            <div class="reveal relative isolate overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-sky-500/10 via-slate-900 to-violet-500/10 p-10 md:p-16 text-center">
+                <div class="absolute -z-10 left-1/2 top-0 -translate-x-1/2 size-72 rounded-full bg-sky-500/20 blur-3xl"></div>
+                <p class="font-mono text-sm text-sky-400 mb-2">05. <span data-i18n="contato.eyebrow">contato</span></p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="contato.titulo">Vamos conversar?</h2>
+                <p class="text-slate-400 max-w-lg mx-auto mb-8" data-i18n="contato.texto">Aberto a oportunidades em desenvolvimento e IA.</p>
+
+                <ul class="flex flex-wrap justify-center gap-3">
+                    <li>
+                        <a href="mailto:luizgustavopaixa1@gmail.com"
+                            class="inline-block bg-gradient-to-r from-sky-500 to-violet-500 text-white font-medium px-6 py-3 rounded-lg shadow-lg shadow-sky-500/20 hover:-translate-y-0.5 transition"
+                            data-i18n="contato.email">Enviar e-mail</a>
+                    </li>
+                    <li>
+                        <a href="cv.html"
+                            class="inline-block border border-white/15 text-white px-6 py-3 rounded-lg hover:bg-white/5 hover:border-white/30 transition"
+                            data-i18n="contato.cv">Currículo</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/gustavopaixa1" target="_blank" rel="noopener noreferrer"
+                            class="inline-block border border-white/15 text-white px-6 py-3 rounded-lg hover:bg-white/5 hover:border-white/30 transition">GitHub ↗</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/gustavo-paixao/" target="_blank" rel="noopener noreferrer"
+                            class="inline-block border border-white/15 text-white px-6 py-3 rounded-lg hover:bg-white/5 hover:border-white/30 transition">LinkedIn ↗</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
-    <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
-        © <span id="ano"></span> Gustavo Paixão
+
+    <footer class="border-t border-white/5 px-6 py-8 text-center text-sm text-slate-500">
+        © <span id="ano"></span> Gustavo Paixão · <span data-i18n="footer.feito">Feito com HTML, Tailwind e JavaScript</span>
     </footer>
 </body>
 
