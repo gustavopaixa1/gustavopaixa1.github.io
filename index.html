@@ -12,14 +12,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
-            --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-            --font-mono: "JetBrains Mono", ui-monospace, monospace;
+            --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+            --font-mono: "Geist Mono", ui-monospace, monospace;
         }
     </style>
     <script src="assets/js/i18n.js" defer></script>
@@ -139,8 +139,8 @@
                         <p class="font-semibold text-white" data-i18n="sobre.fato.foco.valor">IA aplicada</p>
                     </li>
                     <li class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-                        <p class="text-xs text-slate-500" data-i18n="sobre.fato.base">Base</p>
-                        <p class="font-semibold text-white">Backend</p>
+                        <p class="text-xs text-slate-500" data-i18n="sobre.fato.atual">Atualmente</p>
+                        <p class="font-semibold text-white">Backend @ PagBank</p>
                     </li>
                 </ul>
             </div>
@@ -159,15 +159,15 @@
                     <h3 class="font-semibold text-white mb-3">Backend</h3>
                     <ul class="flex flex-wrap gap-2 text-xs">
                         <li class="chip">Kotlin</li><li class="chip">Spring Boot</li><li class="chip">WebFlux</li>
-                        <li class="chip">REST</li><li class="chip" data-i18n="stack.micro">Microsserviços</li><li class="chip">SQL</li>
+                        <li class="chip">REST</li><li class="chip" data-i18n="stack.micro">Microsserviços</li><li class="chip">SQL</li><li class="chip">Oracle</li>
                     </ul>
                 </article>
                 <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-violet-400/40 hover:bg-white/[0.05] transition">
-                    <div class="size-10 rounded-lg bg-violet-400/10 text-violet-300 grid place-items-center font-mono mb-4">AI</div>
-                    <h3 class="font-semibold text-white mb-3" data-i18n="stack.ia">IA &amp; Visão Computacional</h3>
+                    <div class="size-10 rounded-lg bg-violet-400/10 text-violet-300 grid place-items-center font-mono mb-4">λ</div>
+                    <h3 class="font-semibold text-white mb-3" data-i18n="stack.linguagens">Linguagens</h3>
                     <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="chip">Python</li><li class="chip">YOLO</li><li class="chip">DeepSORT</li>
-                        <li class="chip">ROS 2</li>
+                        <li class="chip">Kotlin</li><li class="chip">Python</li><li class="chip">JavaScript</li>
+                        <li class="chip">SQL</li>
                     </ul>
                 </article>
                 <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-emerald-400/40 hover:bg-white/[0.05] transition">
@@ -181,10 +181,17 @@
                     <div class="size-10 rounded-lg bg-amber-400/10 text-amber-300 grid place-items-center font-mono mb-4">✓</div>
                     <h3 class="font-semibold text-white mb-3" data-i18n="stack.qa">Qualidade</h3>
                     <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="chip">Playwright</li><li class="chip" data-i18n="exp.qa.tag.manuais">Testes manuais</li>
+                        <li class="chip">Playwright</li><li class="chip">Robot Framework</li><li class="chip" data-i18n="exp.qa.tag.manuais">Testes manuais</li>
                     </ul>
                 </article>
-                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-pink-400/40 hover:bg-white/[0.05] transition sm:col-span-2 lg:col-span-2">
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-orange-400/40 hover:bg-white/[0.05] transition">
+                    <div class="size-10 rounded-lg bg-orange-400/10 text-orange-300 grid place-items-center font-mono mb-4">☁</div>
+                    <h3 class="font-semibold text-white mb-3">Cloud &amp; DevOps</h3>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">AWS</li><li class="chip">Docker</li>
+                    </ul>
+                </article>
+                <article class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-pink-400/40 hover:bg-white/[0.05] transition">
                     <div class="size-10 rounded-lg bg-pink-400/10 text-pink-300 grid place-items-center font-mono mb-4">$_</div>
                     <h3 class="font-semibold text-white mb-3" data-i18n="stack.ferramentas">Ferramentas &amp; práticas</h3>
                     <ul class="flex flex-wrap gap-2 text-xs">
@@ -227,8 +234,37 @@
             <ol class="relative border-l border-white/10 ml-2 space-y-10">
                 <li class="reveal pl-8 relative">
                     <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-sky-400 ring-4 ring-sky-400/20"></span>
-                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.qa.titulo">Analista de Qualidade</h3>
-                    <p class="text-sm text-sky-300 mb-2">Klok Tech</p>
+                    <p class="font-mono text-xs text-slate-500 mb-1"><span data-i18n="exp.pb.periodo">dez 2025 – atual</span></p>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.pb.titulo">Engenheiro de Software Backend</h3>
+                    <p class="text-sm text-sky-300 mb-2">PagBank</p>
+                    <p class="text-slate-400 mb-3" data-i18n="exp.pb.texto">Desenvolvimento de microsserviços e APIs REST com Kotlin, Spring Boot e WebFlux. Efetivado após o estágio.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Kotlin</li>
+                        <li class="chip">Spring Boot</li>
+                        <li class="chip">WebFlux</li>
+                        <li class="chip" data-i18n="stack.micro">Microsserviços</li>
+                    </ul>
+                </li>
+
+                <li class="reveal pl-8 relative">
+                    <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-sky-400/60 ring-4 ring-sky-400/10"></span>
+                    <p class="font-mono text-xs text-slate-500 mb-1"><span data-i18n="exp.pbe.periodo">jan 2025 – dez 2025</span></p>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.pbe.titulo">Estagiário de Engenharia de Software</h3>
+                    <p class="text-sm text-sky-300 mb-2">PagBank</p>
+                    <p class="text-slate-400 mb-3" data-i18n="exp.pbe.texto">Desenvolvimento backend em times ágeis, com APIs REST e integração com bancos de dados.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs">
+                        <li class="chip">Kotlin</li>
+                        <li class="chip">Spring Boot</li>
+                        <li class="chip">REST</li>
+                        <li class="chip">SQL</li>
+                    </ul>
+                </li>
+
+                <li class="reveal pl-8 relative">
+                    <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-violet-400 ring-4 ring-violet-400/20"></span>
+                    <p class="font-mono text-xs text-slate-500 mb-1">2024 – 2025</p>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.qa.titulo">Estagiário de QA</h3>
+                    <p class="text-sm text-violet-300 mb-2" data-i18n="exp.qa.empresa">Klok Tech (atual RPE)</p>
                     <p class="text-slate-400 mb-3" data-i18n="exp.qa.texto">Criação de testes automatizados para aplicações web e mobile.</p>
                     <ul class="flex flex-wrap gap-2 text-xs">
                         <li class="chip">Playwright</li>
@@ -238,28 +274,11 @@
                 </li>
 
                 <li class="reveal pl-8 relative">
-                    <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-violet-400 ring-4 ring-violet-400/20"></span>
-                    <h3 class="text-lg font-semibold text-white" data-i18n="exp.gp.titulo">Gestor de projetos</h3>
-                    <p class="text-sm text-violet-300 mb-2" data-i18n="exp.gp.local">Projeto de extensão · UFPB</p>
-                    <p class="text-slate-400 mb-3" data-i18n="exp.gp.texto">Atuação com gestão de projetos e equipes de desenvolvimento em um projeto de extensão da faculdade.</p>
-                    <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="chip">Kotlin</li>
-                        <li class="chip">Spring Boot</li>
-                        <li class="chip" data-i18n="exp.gp.tag.ia">Inteligência Artificial</li>
-                    </ul>
-                </li>
-
-                <li class="reveal pl-8 relative">
                     <span class="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20"></span>
+                    <p class="font-mono text-xs text-slate-500 mb-1" data-i18n="form.label">formação</p>
                     <h3 class="text-lg font-semibold text-white" data-i18n="form.titulo">Bacharelado em Ciência da Computação</h3>
-                    <p class="text-sm text-emerald-300 mb-2">UFPB · PET Computação</p>
-                    <p class="text-slate-400 mb-3" data-i18n="form.tcc">TCC em navegação de robôs socialmente consciente: detecção de pessoas com YOLOv11, rastreamento com DeepSORT e navegação com ROS 2 / Nav2, validado em simulação no Gazebo.</p>
-                    <ul class="flex flex-wrap gap-2 text-xs">
-                        <li class="chip">ROS 2</li>
-                        <li class="chip">YOLOv11</li>
-                        <li class="chip">DeepSORT</li>
-                        <li class="chip">Python</li>
-                    </ul>
+                    <p class="text-sm text-emerald-300 mb-2">Universidade Federal da Paraíba</p>
+                    <p class="text-slate-400" data-i18n="form.extensao">Atuei como gestor de projetos em um projeto de extensão, coordenando equipes de desenvolvimento.</p>
                 </li>
             </ol>
         </section>
